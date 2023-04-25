@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/vendor/autoload.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,12 @@
 <title>yes/No API Client</title>
 </head>
 <body>
-<h1 class="text-center">Hello World From Yes/No App!!</h1>
-<?php
-
-phpinfo();
-
+<h1 class="text-center">Yes/No API Client</h1>
+<?php 
+$client = new \GuzzleHttp\Client(); 
+$json = $client->request('GET', 'https://yesno.wtf/api');
+$obj = json_decode($json->getBody());
+echo $obj->answer;
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
