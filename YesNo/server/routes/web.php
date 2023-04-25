@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $number = rand(1,100);
+    return [
+        'number' => $number,
+        'answer' => $number % 2 == 0 ? "Yes" : "No"
+    ];
 });
