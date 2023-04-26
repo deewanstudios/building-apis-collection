@@ -15,7 +15,8 @@
 <h1 class="text-center">Yes/No API Client</h1>
 <?php 
 $client = new \GuzzleHttp\Client(); 
-$json = $client->request('GET', 'https://yesno.wtf/api');
+// $json = $client->request('GET', 'https://yesno.wtf/api');
+$json = $client->request('GET', 'http://192.168.0.63:61026/');
 $obj = json_decode($json->getBody());
 echo $obj->answer;
 ?>
