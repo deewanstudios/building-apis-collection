@@ -10,6 +10,6 @@ RUN service apache2 restart
 
 WORKDIR /var/www/html/server
 
-COPY client/ /var/www/html/server
+COPY server/ /var/www/html/server
 
 EXPOSE 80
