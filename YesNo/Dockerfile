@@ -1,5 +1,13 @@
 FROM php:8.2-apache
 
+ADD apache/client.conf /etc/apache2/sites-available/
+
+RUN a2dissite 000-default.conf
+
+RUN a2ensite server.conf
+
+RUN service apache2 restart
+
 WORKDIR /var/www/html/client
 
 COPY client/ /var/www/html/client
