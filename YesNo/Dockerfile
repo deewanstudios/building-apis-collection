@@ -4,7 +4,7 @@ ADD apache/client.conf /etc/apache2/sites-available/
 
 RUN a2dissite 000-default.conf
 
-RUN a2ensite server.conf
+RUN a2ensite client.conf
 
 RUN service apache2 restart
 
