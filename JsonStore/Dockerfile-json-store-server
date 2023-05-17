@@ -1,6 +1,6 @@
 FROM php:8.2-apache
 
-ADD apache/client.conf /etc/apache2/sites-available/
+ADD apache/server.conf /etc/apache2/sites-available/
 
 RUN a2dissite 000-default.conf
 
@@ -8,7 +8,7 @@ RUN a2ensite server.conf
 
 RUN service apache2 restart
 
-WORKDIR /var/www/html/client
+WORKDIR /var/www/html/server
 
 COPY json-store-server/ /var/www/html/server
 
